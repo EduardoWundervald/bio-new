@@ -14,10 +14,10 @@
 <body class="resultados-page">
     <header>
         <div class="logo-area">
-            <img src="img/logo.jpeg" alt="Logo" class="logo-img">
+            <img src="img/logo.jpeg" alt="Logo Dra. Kamyla Martins" class="logo-img">
         </div>
         <nav class="main-nav">
-            <button class="menu-toggle">&#9776;</button>
+            <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="procedimentos.html">Procedimentos</a></li>
@@ -27,7 +27,9 @@
             </ul>
             <form class="search-bar">
                 <input type="text" placeholder="Buscar resultado...">
-                <button type="submit"><span class="search-icon">🔍</span></button>
+                <button type="submit" aria-label="Buscar">
+                  <span class="search-icon" style="display:flex;align-items:center;">🔍</span>
+                </button>
             </form>
         </nav>
     </header>
@@ -36,14 +38,104 @@
         <section class="left-content">
             <h2 class="section-title">Resultados (Antes e Depois)</h2>
             <div class="cards-container">
-                <!-- Exemplo de Card -->
-                <div class="procedimento-card resultado-container">
+                
+                <!-- EXEMPLO 1: CARD PADRÃO (ANTES E DEPOIS) -->
+                <!-- Use este modelo para duas fotos -->
+                <!-- <div class="procedimento-card resultado-container">
                     <div class="comparacao-fotos">
-                        <img src="img/antes1.jpg" alt="Antes" class="foto-antes">
-                        <img src="img/depois1.jpg" alt="Depois" class="foto-depois">
+                        <img src="img/antes1.jpg" alt="Antes Preenchimento Labial" class="foto-antes">
+                        <img src="img/depois1.jpg" alt="Depois Preenchimento Labial" class="foto-depois">
                     </div>
                     <span class="card-title">Preenchimento Labial</span>
+                </div> -->
+
+                <!-- EXEMPLO 2: CARD COM UMA FOTO APENAS -->
+                <!-- Use este modelo quando tiver apenas o resultado final -->
+                <!-- Note a classe "unica" adicionada abaixo -->
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/botox_1.jpeg" alt="Botox" class="foto-unica">
+                    </div>
+                    <span class="card-title">Botox</span>
                 </div>
+
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/botox_2.jpeg" alt="Botox" class="foto-unica">
+                    </div>
+                    <span class="card-title">Botox</span>
+                </div>
+
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/botox_3.jpeg" alt="Botox" class="foto-unica">
+                    </div>
+                    <span class="card-title">Botox</span>
+                </div>
+
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/botox_4.jpeg" alt="Botox" class="foto-unica">
+                    </div>
+                    <span class="card-title">Botox</span>
+                </div>
+
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/botox_5.jpeg" alt="Botox" class="foto-unica">
+                    </div>
+                    <span class="card-title">Botox</span>
+                </div>
+
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/botox_6.jpeg" alt="Botox" class="foto-unica">
+                    </div>
+                    <span class="card-title">Botox</span>
+                </div>
+
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/fios_PDO_1.jpeg" alt="Fios PDO" class="foto-unica">
+                    </div>
+                    <span class="card-title">Fios de PDO</span>
+                </div>
+
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/harmonizacao_gluteos_1.jpeg" alt="Harmonização de glúteos" class="foto-unica">
+                    </div>
+                    <span class="card-title">Harmonização de glúteos</span>
+                </div>
+
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/limpeza_pele_1.jpeg" alt="Limpeza de pele" class="foto-unica">
+                    </div>
+                    <span class="card-title">Limpeza de pele</span>
+                </div>
+
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/peim_1.jpeg" alt="PEIM" class="foto-unica">
+                    </div>
+                    <span class="card-title">PEIM</span>
+                </div>
+
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/preenchimento_labial_1.jpeg" alt="Preenchimento labial" class="foto-unica">
+                    </div>
+                    <span class="card-title">Preenchimento labial</span>
+                </div>
+
+                <div class="procedimento-card resultado-container">
+                    <div class="comparacao-fotos unica">
+                        <img src="img-resultados/preenchimento_mandibula_1.jpeg" alt="Preenchimento de mandíbula" class="foto-unica">
+                    </div>
+                    <span class="card-title">Preenchimento de mandíbula</span>
+                </div>
+
             </div>  
         </section>
     </main>
@@ -58,12 +150,12 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Dra. Kamyla Martins.</p>
+        <p>&copy; 2025 Dra. Kamyla Martins. Todos os direitos reservados.</p>
     </footer>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Menu
+        // Menu Mobile
         const menuBtn = document.querySelector('.menu-toggle');
         const navList = document.querySelector('.main-nav ul');
         if(menuBtn) menuBtn.addEventListener('click', () => navList.classList.toggle('open'));
@@ -77,9 +169,15 @@
 
         cards.forEach(card => {
             card.addEventListener('click', function() {
-                const fotos = card.querySelector('.comparacao-fotos').innerHTML;
+                const fotosContainer = card.querySelector('.comparacao-fotos');
+                const fotos = fotosContainer.innerHTML;
                 const titulo = card.querySelector('.card-title').textContent;
-                modalBody.innerHTML = `<div class="comparacao-fotos">${fotos}</div>`;
+                
+                // Verifica se é uma foto única para adicionar a classe correta no modal
+                const isUnica = fotosContainer.classList.contains('unica');
+                const extraClass = isUnica ? ' unica' : '';
+
+                modalBody.innerHTML = `<div class="comparacao-fotos${extraClass}">${fotos}</div>`;
                 modalTitle.textContent = titulo;
                 overlay.style.display = 'flex';
             });
