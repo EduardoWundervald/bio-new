@@ -39,19 +39,8 @@
             <h2 class="section-title">Resultados (Antes e Depois)</h2>
             <div class="cards-container">
                 
-                <!-- EXEMPLO 1: CARD PADRÃO (ANTES E DEPOIS) -->
-                <!-- Use este modelo para duas fotos -->
-                <!-- <div class="procedimento-card resultado-container">
-                    <div class="comparacao-fotos">
-                        <img src="img/antes1.jpg" alt="Antes Preenchimento Labial" class="foto-antes">
-                        <img src="img/depois1.jpg" alt="Depois Preenchimento Labial" class="foto-depois">
-                    </div>
-                    <span class="card-title">Preenchimento Labial</span>
-                </div> -->
-
-                <!-- EXEMPLO 2: CARD COM UMA FOTO APENAS -->
-                <!-- Use este modelo quando tiver apenas o resultado final -->
-                <!-- Note a classe "unica" adicionada abaixo -->
+                <!-- EXEMPLO 1: FOTO ÚNICA (Basta adicionar a classe 'unica') -->
+                <!-- O CSS agora ajustará a altura e largura automaticamente -->
                 <div class="procedimento-card resultado-container">
                     <div class="comparacao-fotos unica">
                         <img src="img-resultados/botox_1.jpeg" alt="Botox" class="foto-unica">
@@ -173,11 +162,10 @@
                 const fotos = fotosContainer.innerHTML;
                 const titulo = card.querySelector('.card-title').textContent;
                 
-                // Verifica se é uma foto única para adicionar a classe correta no modal
-                const isUnica = fotosContainer.classList.contains('unica');
-                const extraClass = isUnica ? ' unica' : '';
+                // Copia as classes do container (especialmente "unica")
+                const classesOriginais = fotosContainer.className; 
 
-                modalBody.innerHTML = `<div class="comparacao-fotos${extraClass}">${fotos}</div>`;
+                modalBody.innerHTML = `<div class="${classesOriginais}">${fotos}</div>`;
                 modalTitle.textContent = titulo;
                 overlay.style.display = 'flex';
             });

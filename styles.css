@@ -71,7 +71,6 @@ header {
     border: 1px solid #eaeaea;
     border-radius: 6px;
     padding: 2px 8px;
-    /* Remove margens verticais para garantir alinhamento flex */
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -208,7 +207,7 @@ header {
     border-radius: 18px 18px 0 0;
 }
 
-/* --- RESULTADOS (ANTES E DEPOIS) --- */
+/* --- RESULTADOS (ANTES E DEPOIS) NA PÁGINA --- */
 .comparacao-fotos {
     display: flex;
     flex-direction: row;
@@ -217,7 +216,7 @@ header {
 }
 .comparacao-fotos img {
     width: 50% !important; 
-    height: 100% !important; /* CORREÇÃO FINAL: Garante que a imagem respeite a altura do container e não vaze no mobile */
+    height: 100% !important; /* Altura fixa no card da página */
     border-radius: 0 !important;
     object-fit: cover;
     border-right: 1px solid #fff;
@@ -226,7 +225,7 @@ header {
     border-right: none;
 }
 
-/* Estilo para card com UMA foto apenas */
+/* Estilo para card com UMA foto apenas na página */
 .comparacao-fotos.unica img {
     width: 100% !important;
     border-right: none !important;
@@ -342,7 +341,6 @@ footer {
 }
 
 /* --- ÍCONES SOCIAIS --- */
-/* Garante que os ícones fiquem sempre lado a lado */
 .contact-icons {
     display: flex;
     flex-direction: row !important;
@@ -373,7 +371,6 @@ footer {
     text-align: justify;
     line-height: 1.6;
 }
-/* Estilo da foto da Doutora na página Sobre */
 .sobre-img {
     width: 150px;           
     height: 150px;
@@ -391,31 +388,26 @@ footer {
 }
 
 @media (max-width: 700px) {
-    /* CORREÇÃO CENTRALIZAÇÃO CARDS */
     .main-content {
         flex-direction: column;
-        align-items: center; /* Centraliza a coluna principal */
+        align-items: center; 
     }
     .left-content {
-        width: 100%; /* Garante que o container ocupe toda a largura */
+        width: 100%;
     }
     .cards-container {
         grid-template-columns: 1fr;
-        justify-items: center; /* Centraliza os cards no grid */
+        justify-items: center;
     }
     .procedimento-card {
         margin-left: auto;
-        margin-right: auto; /* Força margem automática para centralizar */
+        margin-right: auto;
     }
-
-    /* Navegação */
-    /* MUDANÇA: 'center' centraliza o toggle quando ele está sozinho. */
     .main-nav {
         justify-content: center; 
         padding-left: 20px;
         padding-right: 20px;
     }
-
     .menu-toggle {
         display: block;
         font-size: 2.1rem;
@@ -442,28 +434,23 @@ footer {
         display: flex;
     }
     .search-bar {
-        /* Margem apenas na esquerda para separar do ícone */
         margin: 0 0 0 20px;
         width: auto;
-        flex: 1; /* Ocupa o espaço restante */
+        flex: 1;
         max-width: 300px;
         justify-content: space-between;
     }
     .search-bar input {
         width: 100%; 
     }
-    
-    /* Feedbacks um abaixo do outro no mobile */
     .feedbacks-container {
         grid-template-columns: 1fr;
     }
-    
     .sidebar {
         max-width: 100%;
         width: 100%;
     }
-    
-    /* Fotos de Antes/Depois lado a lado no mobile */
+    /* Cards na página mobile */
     .comparacao-fotos {
         flex-direction: row !important;
         height: 180px !important;
@@ -473,13 +460,9 @@ footer {
         border-right: 1px solid #fff;
         border-bottom: none !important;
     }
-    
-    /* Foto única deve ocupar 100% no mobile também */
     .comparacao-fotos.unica img {
         width: 100% !important;
     }
-    
-    /* Ajuste da foto sobre no mobile */
     .sobre-img {
         float: none;
         display: block;
@@ -502,11 +485,13 @@ footer {
     cursor: pointer;
 }
 
+/* A MÁGICA DO REDIMENSIONAMENTO AUTOMÁTICO */
 .modal-content {
-    max-width: 1100px !important;
-    width: 90% !important;
+    /* width auto permite que o card encolha se a foto for estreita */
+    width: auto !important; 
+    max-width: 95vw !important; /* Limite lateral */
     height: auto !important;
-    max-height: 90vh !important;
+    max-height: 95vh !important; /* Limite vertical */
     background: #fff;
     padding: 15px;
     border-radius: 18px;
@@ -514,40 +499,41 @@ footer {
     display: flex;
     flex-direction: column;
     cursor: default;
+    align-items: center;
 }
 
+/* Container de fotos NO MODAL */
 .modal-content .comparacao-fotos {
-    height: 60vh !important; /* Altura padrão para modal */
+    /* Removemos altura fixa. A altura agora depende da imagem */
+    height: auto !important;
+    width: auto !important;
     display: flex;
-    width: 100%;
-    justify-content: center; /* Centraliza imagem caso sobre espaço */
+    justify-content: center;
+    max-height: 80vh; /* Limite de altura para a imagem não estourar a tela */
 }
 
-/* NOVO: Classes para controlar altura no modal */
-/* .horizontal = mantém o padrão (aprox 60vh) */
-.modal-content .comparacao-fotos.horizontal {
-    height: 55vh !important;
-}
-
-/* .vertical = aumenta a altura para acomodar fotos em pé (85vh) */
-.modal-content .comparacao-fotos.vertical {
-    height: 85vh !important;
-}
-
-.modal-content .comparacao-fotos img {
-    height: 100% !important;
-    width: 50% !important;
+/* Regra para DUAS fotos (Padrão) no modal */
+/* Para garantir que fiquem alinhadas, mantemos uma altura fixa visual para duplas */
+.modal-content .comparacao-fotos:not(.unica) img {
+    height: 60vh !important;
+    width: auto !important;
+    min-width: 300px;
     object-fit: cover;
 }
 
-/* AJUSTE DE CORTE:
-   Para imagens únicas no modal, usamos object-fit: contain.
-   Isso garante que a imagem NUNCA seja cortada, ela aparecerá inteira
-   dentro da caixa disponível.
-*/
+/* Regra para UMA foto (.unica) no modal - REDIMENSIONAMENTO AUTOMÁTICO */
+.modal-content .comparacao-fotos.unica {
+    display: block;
+}
+
 .modal-content .comparacao-fotos.unica img {
-    width: 100% !important;
-    object-fit: contain !important; /* Segredo para não cortar! */
+    /* A imagem define o tamanho do card agora */
+    width: auto !important;
+    height: auto !important;
+    max-height: 80vh !important; /* Não ultrapassa altura da tela */
+    max-width: 100% !important;
+    object-fit: contain !important; /* Mostra a imagem inteira, sem cortes */
+    border-right: none !important;
 }
 
 .modal-close {
@@ -559,7 +545,6 @@ footer {
     cursor: pointer;
     font-weight: bold;
 }
-
 .modal-title {
     text-align: center;
     padding: 15px 0 5px 0;
@@ -569,22 +554,8 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Ajuste do Modal específico para Celular */
 @media (max-width: 480px) {
     .modal-content {
-        width: 95% !important;
-        max-height: 85vh !important;
         padding: 10px;
-    }
-    .modal-content .comparacao-fotos {
-        flex-direction: row !important;
-        height: 35vh !important;
-    }
-    /* Permite controlar altura no mobile também se necessário */
-    .modal-content .comparacao-fotos.vertical {
-        height: 60vh !important; /* Mais alto no celular para fotos verticais */
-    }
-    .modal-title {
-        font-size: 1rem;
     }
 }
