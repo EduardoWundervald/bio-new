@@ -517,9 +517,21 @@ footer {
 }
 
 .modal-content .comparacao-fotos {
-    height: 60vh !important;
+    height: 60vh !important; /* Altura padrão para modal */
     display: flex;
     width: 100%;
+    justify-content: center; /* Centraliza imagem caso sobre espaço */
+}
+
+/* NOVO: Classes para controlar altura no modal */
+/* .horizontal = mantém o padrão (aprox 60vh) */
+.modal-content .comparacao-fotos.horizontal {
+    height: 55vh !important;
+}
+
+/* .vertical = aumenta a altura para acomodar fotos em pé (85vh) */
+.modal-content .comparacao-fotos.vertical {
+    height: 85vh !important;
 }
 
 .modal-content .comparacao-fotos img {
@@ -527,9 +539,15 @@ footer {
     width: 50% !important;
     object-fit: cover;
 }
-/* Modal foto única */
+
+/* AJUSTE DE CORTE:
+   Para imagens únicas no modal, usamos object-fit: contain.
+   Isso garante que a imagem NUNCA seja cortada, ela aparecerá inteira
+   dentro da caixa disponível.
+*/
 .modal-content .comparacao-fotos.unica img {
     width: 100% !important;
+    object-fit: contain !important; /* Segredo para não cortar! */
 }
 
 .modal-close {
@@ -561,6 +579,10 @@ footer {
     .modal-content .comparacao-fotos {
         flex-direction: row !important;
         height: 35vh !important;
+    }
+    /* Permite controlar altura no mobile também se necessário */
+    .modal-content .comparacao-fotos.vertical {
+        height: 60vh !important; /* Mais alto no celular para fotos verticais */
     }
     .modal-title {
         font-size: 1rem;
