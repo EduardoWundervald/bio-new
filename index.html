@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Dra. Kamyla Martins</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/logo_aba4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="index-home">
+    <header>
+        <div class="logo-area">
+            <img src="img/logo.jpeg" alt="Logo Dra. Kamyla Martins" class="logo-img">
+        </div>
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="procedimentos.html">Procedimentos</a></li>
+                <li><a href="resultados.html">Antes e Depois</a></li> 
+                <li><a href="feedbacks.html">Feedbacks</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- NOVA SEÇÃO: Banner de Destaque -->
+    <section class="hero-section">
+        <h1 class="hero-title">Realce sua beleza natural</h1>
+        <p class="hero-subtitle">
+            Biomedicina Estética avançada focada em harmonização e bem-estar. 
+            Descubra sua melhor versão com tratamentos personalizados.
+        </p>
+        <a href="https://wa.me/5549999939870" target="_blank" class="cta-button">Agendar Avaliação</a>
+    </section>
+
+    <main class="main-content">
+        <section class="left-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 24px;">
+                <h2 class="section-title" style="margin-bottom:0;">Procedimentos em Destaque</h2>
+            </div>
+            
+            <div class="cards-container">
+                <div class="procedimento-card" onclick="window.location.href='procedimentos.html'">
+                    <img src="img/botox.jpeg" alt="Botox">
+                    <div class="card-desc">Suavize rugas e linhas de expressão com naturalidade.</div>
+                    <span class="card-title">Botox</span>
+                </div>
+                <div class="procedimento-card" onclick="window.location.href='procedimentos.html'">
+                    <img src="img/bioestimulador_colageno.jpeg" alt="Bioestimulador">
+                    <div class="card-desc">Reponha o colágeno e recupere a firmeza da pele.</div>
+                    <span class="card-title">Bioestimulador</span>
+                </div>
+                <div class="procedimento-card" onclick="window.location.href='procedimentos.html'">
+                    <img src="img/preenchimento_labial.jpeg" alt="Preenchimento Labial">
+                    <div class="card-desc">Volume e contorno para lábios hidratados e harmônicos.</div>
+                    <span class="card-title">Preenchimento Labial</span>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="procedimentos.html" class="btn-outline">Ver todos os procedimentos &rarr;</a>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <section class="welcome-box">
+                <h3 class="welcome-title boavinda-font" style="font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: #b89fa3;">Boas-vindas!</h3>
+                <img src="img/perfil.jpeg" alt="Foto Dra. Kamyla" class="sidebar-img" style="width: 120px; height: 120px; border: 3px solid #fcfcfc; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <p class="welcome-text" style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6;">
+                    Sou a <strong>Dra. Kamyla Martins</strong>, especialista em realçar sua beleza natural. Aqui você encontra inspiração e tratamentos feitos com segurança e carinho.
+                </p>
+                <div class="contact-icons" style="margin-top: 20px; display:flex; justify-content:center; gap:15px;">
+                    <a href="https://instagram.com/biokamylamartins" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:24px;"></a>
+                    <a href="https://wa.me/5549999939870" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="width:24px;"></a>
+                </div>
+                <a href="sobre.html" style="display: block; margin-top: 15px; color: #b89fa3; font-weight: 700; text-decoration: none; font-size: 0.9rem;">Conheça minha história &rarr;</a>
+            </section>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dra. Kamyla Martins. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.menu-toggle');
+            const navList = document.querySelector('.main-nav ul');
+            if(menuBtn) {
+                menuBtn.addEventListener('click', () => navList.classList.toggle('open'));
+            }
+            document.body.classList.add('page-loaded');
+            document.querySelectorAll('a[href]').forEach(link => {
+                if (link.hostname === window.location.hostname && !link.hasAttribute('target')) {
+                    link.addEventListener('click', function(e) {
+                        if (link.href === window.location.href) return;
+                        e.preventDefault();
+                        document.body.classList.remove('page-loaded');
+                        setTimeout(() => window.location.href = link.href, 500);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

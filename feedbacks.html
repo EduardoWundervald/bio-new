@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedbacks - Dra. Kamyla Martins</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/logo_aba4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="feedbacks-page">
+    <header>
+        <div class="logo-area">
+            <img src="img/logo.jpeg" alt="Logo Dra. Kamyla Martins" class="logo-img">
+        </div>
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="procedimentos.html">Procedimentos</a></li>
+                <li><a href="resultados.html">Antes e Depois</a></li> 
+                <li><a href="feedbacks.html" class="active">Feedbacks</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="left-content">
+            <h2 class="section-title">FEEDBACKS DE CLIENTES</h2>
+            
+            <div class="feedbacks-container">
+                <div class="feedback-card">
+                    <span class="feedback-name">Preenchimento Labial</span>
+                    <p class="feedback-text">"Amei o resultado do preenchimento labial! Ficou super natural e delicado."</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Botox</span>
+                    <p class="feedback-text">"O resultado foi além do esperado! As linhas de expressão suavizaram muito e o atendimento foi impecável."</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Bioestimulador de Colágeno</span>
+                    <p class="feedback-text">"Senti minha pele mais firme e iluminada. Recomendo para quem busca rejuvenescimento!"</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Preenchimento Labial</span>
+                    <p class="feedback-text">"Meus lábios ficaram lindos, naturais e bem hidratados. Adorei o cuidado e atenção!"</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Harmonização de Glúteos</span>
+                    <p class="feedback-text">"O contorno ficou perfeito, exatamente como eu queria. Procedimento seguro e resultado incrível!"</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Skinbooster</span>
+                    <p class="feedback-text">"Minha pele ficou muito mais viçosa e hidratada. Senti diferença já na primeira sessão!"</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Peeling Químico</span>
+                    <p class="feedback-text">"A renovação da pele foi visível, manchas clarearam e a textura melhorou bastante."</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Limpeza de Pele</span>
+                    <p class="feedback-text">"Pele limpa, sem cravos e com sensação de frescor. Atendimento muito profissional!"</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Rinomodelação</span>
+                    <p class="feedback-text">"Meu nariz ficou mais harmônico e natural, sem cirurgia. Fiquei muito satisfeita!"</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Fios PDO</span>
+                    <p class="feedback-text">"O efeito lifting foi imediato e natural. Senti minha pele mais firme e rejuvenescida!"</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Lipo de Papada</span>
+                    <p class="feedback-text">"A papada reduziu visivelmente, deixando o contorno do rosto mais definido. Muito satisfeita!"</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Intradermoterapia</span>
+                    <p class="feedback-text">"Tratamento eficaz para gordura localizada. Notei diferença já nas primeiras sessões."</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">Tratamento de Hiperidrose</span>
+                    <p class="feedback-text">"Acabou o incômodo do suor excessivo. Mudou minha qualidade de vida!"</p>
+                </div>
+                <div class="feedback-card">
+                    <span class="feedback-name">PEIM</span>
+                    <p class="feedback-text">"As microvarizes sumiram e minhas pernas ficaram muito mais bonitas. Recomendo!"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barra Lateral de Contato Rápido -->
+        <aside class="sidebar">
+            <section class="welcome-box">
+                <h3 class="welcome-title" style="color:#b89fa3;">Agende seu horário</h3>
+                <p class="welcome-text">Quer ter uma experiência incrível também?</p>
+                <div class="contact-icons" style="margin-top: 20px; display:flex; justify-content:center; gap:15px;">
+                    <a href="https://wa.me/5549999939870" target="_blank" class="cta-button" style="font-size: 0.9rem; padding: 10px 20px;">Chamar no WhatsApp</a>
+                </div>
+            </section>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dra. Kamyla Martins. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.menu-toggle');
+            const navList = document.querySelector('.main-nav ul');
+            if(menuBtn) menuBtn.addEventListener('click', () => navList.classList.toggle('open'));
+            
+            document.body.classList.add('page-loaded');
+            
+            document.querySelectorAll('a[href]').forEach(link => {
+                if (link.hostname === window.location.hostname && !link.hasAttribute('target')) {
+                    link.addEventListener('click', function(e) {
+                        if (link.href === window.location.href) return;
+                        e.preventDefault();
+                        document.body.classList.remove('page-loaded');
+                        setTimeout(() => window.location.href = link.href, 500);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
